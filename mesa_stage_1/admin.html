@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MESA Admin Panel - Content Management</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .admin-panel {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--bg-card);
+      border-radius: 1rem;
+      box-shadow: var(--shadow-medium);
+    }
+    .admin-section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      border: 1px solid var(--border-light);
+      border-radius: 0.5rem;
+    }
+    .admin-form {
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 0.75rem;
+      border: 1px solid var(--border-light);
+      border-radius: 0.25rem;
+      font-size: 1rem;
+    }
+    .btn-admin {
+      background: var(--color-gold);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-admin:hover {
+      background: var(--color-gold-dark);
+    }
+    .success-message {
+      background: #10b981;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      margin-top: 1rem;
+      display: none;
+    }
+    .error-message {
+      background: #ef4444;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="photos/Logo.jpg" alt="MESA Logo" class="logo-image">
+          <span class="logo-text">MESA</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="calendar.html">Calendar</a>
+          <a href="team.html">Team</a>
+          <li><a href="gallery.html">Gallery</a></li>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Admin Panel -->
+  <div class="admin-panel">
+    <h1><i class="fas fa-cog"></i> MESA Admin Panel</h1>
+    <p>Manage events, photos, and team members dynamically</p>
+
+    <!-- Add Event Section -->
+    <div class="admin-section">
+      <h2><i class="fas fa-calendar-plus"></i> Add New Event</h2>
+      <form class="admin-form" id="eventForm">
+        <div class="form-group">
+          <label for="eventTitle">Event Title</label>
+          <input type="text" id="eventTitle" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="eventDate">Event Date</label>
+          <input type="date" id="eventDate" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="eventTime">Event Time</label>
+          <input type="text" id="eventTime" name="time" placeholder="e.g., 9:00 AM - 5:00 PM" required>
+        </div>
+        <div class="form-group">
+          <label for="eventLocation">Location</label>
+          <input type="text" id="eventLocation" name="location" required>
+        </div>
+        <div class="form-group">
+          <label for="eventCategory">Category</label>
+          <select id="eventCategory" name="category" required>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="competition">Competition</option>
+            <option value="community">Community</option>
+            <option value="industry">Industry Visit</option>
+            <option value="meeting">Meeting</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="eventDescription">Description</label>
+          <textarea id="eventDescription" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="eventImage">Image Path</label>
+          <input type="text" id="eventImage" name="image" placeholder="photos/events/event-name.jpg">
+        </div>
+        <button type="submit" class="btn-admin">
+          <i class="fas fa-plus"></i> Add Event
+        </button>
+        <div class="success-message" id="eventSuccess">Event added successfully!</div>
+        <div class="error-message" id="eventError">Error adding event. Please try again.</div>
+      </form>
+    </div>
+
+    <!-- Add Photo Section -->
+    <div class="admin-section">
+      <h2><i class="fas fa-image"></i> Add New Photo</h2>
+      <form class="admin-form" id="photoForm">
+        <div class="form-group">
+          <label for="photoFilename">Photo Filename</label>
+          <input type="text" id="photoFilename" name="filename" placeholder="photo-name.jpg" required>
+        </div>
+        <div class="form-group">
+          <label for="photoCategory">Category</label>
+          <select id="photoCategory" name="category" required>
+            <option value="team">Team Photos</option>
+            <option value="events">Event Photos</option>
+            <option value="gallery">General Gallery</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="photoSubcategory">Subcategory</label>
+          <input type="text" id="photoSubcategory" name="subcategory" placeholder="e.g., workshop, group, individual">
+        </div>
+        <div class="form-group">
+          <label for="photoTitle">Photo Title</label>
+          <input type="text" id="photoTitle" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="photoDescription">Description</label>
+          <textarea id="photoDescription" name="description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="photoDate">Photo Date</label>
+          <input type="date" id="photoDate" name="date" required>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="photoFeatured" name="featured"> Featured Photo
+          </label>
+        </div>
+        <button type="submit" class="btn-admin">
+          <i class="fas fa-plus"></i> Add Photo
+        </button>
+        <div class="success-message" id="photoSuccess">Photo added successfully!</div>
+        <div class="error-message" id="photoError">Error adding photo. Please try again.</div>
+      </form>
+    </div>
+
+    <!-- Add Team Member Section -->
+    <div class="admin-section">
+      <h2><i class="fas fa-user-plus"></i> Add Team Member</h2>
+      <form class="admin-form" id="teamForm">
+        <div class="form-group">
+          <label for="memberName">Name</label>
+          <input type="text" id="memberName" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="memberPosition">Position</label>
+          <input type="text" id="memberPosition" name="position" required>
+        </div>
+        <div class="form-group">
+          <label for="memberCategory">Category</label>
+          <select id="memberCategory" name="category" required>
+            <option value="faculty">Faculty</option>
+            <option value="office_bearers">Office Bearers</option>
+            <option value="coordinators">Coordinators</option>
+            <option value="representatives">Representatives</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="memberYear">Year (for students)</label>
+          <input type="text" id="memberYear" name="year" placeholder="e.g., 3rd Year">
+        </div>
+        <div class="form-group">
+          <label for="memberBranch">Branch</label>
+          <input type="text" id="memberBranch" name="branch" value="Mechanical Engineering">
+        </div>
+        <div class="form-group">
+          <label for="memberEmail">Email</label>
+          <input type="email" id="memberEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="memberPhone">Phone</label>
+          <input type="tel" id="memberPhone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="memberImage">Image Path</label>
+          <input type="text" id="memberImage" name="image" placeholder="photos/team/member-name.jpg" required>
+        </div>
+        <div class="form-group">
+          <label for="memberBio">Bio</label>
+          <textarea id="memberBio" name="bio" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn-admin">
+          <i class="fas fa-plus"></i> Add Team Member
+        </button>
+        <div class="success-message" id="teamSuccess">Team member added successfully!</div>
+        <div class="error-message" id="teamError">Error adding team member. Please try again.</div>
+      </form>
+    </div>
+
+    <!-- Instructions -->
+    <div class="admin-section">
+      <h2><i class="fas fa-info-circle"></i> Instructions</h2>
+      <div style="line-height: 1.6;">
+        <h3>How to Use This Admin Panel:</h3>
+        <ol>
+          <li><strong>Adding Events:</strong> Fill out the event form and click "Add Event". The event will automatically appear on the events page and calendar.</li>
+          <li><strong>Adding Photos:</strong> Upload photos to the appropriate folder first, then use this form to add them to the system.</li>
+          <li><strong>Adding Team Members:</strong> Add new team members who will automatically appear on the team page.</li>
+          <li><strong>File Organization:</strong>
+            <ul>
+              <li>Event photos: <code>photos/events/</code></li>
+              <li>Team photos: <code>photos/team/</code></li>
+              <li>General photos: <code>photos/gallery/</code></li>
+            </ul>
+          </li>
+        </ol>
+        <h3>Recommended Workflow:</h3>
+        <ol>
+          <li>Upload image files to appropriate folders</li>
+          <li>Use this admin panel to add metadata</li>
+          <li>Changes will be reflected immediately on the website</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/content-manager.js"></script>
+  <script>
+    // Admin panel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Event form handler
+      document.getElementById('eventForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const eventData = {
+          title: formData.get('title'),
+          date: formData.get('date'),
+          time: formData.get('time'),
+          location: formData.get('location'),
+          category: formData.get('category'),
+          description: formData.get('description'),
+          image: formData.get('image') || 'photos/default-event.jpg',
+          status: 'upcoming',
+          registrationLink: '#',
+          icon: getCategoryIcon(formData.get('category'))
+        };
+
+        try {
+          if (window.mesaContentManager) {
+            await window.mesaContentManager.addEvent(eventData);
+            showMessage('eventSuccess');
+            e.target.reset();
+          }
+        } catch (error) {
+          showMessage('eventError');
+        }
+      });
+
+      // Photo form handler
+      document.getElementById('photoForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const photoData = {
+          filename: formData.get('filename'),
+          category: formData.get('category'),
+          subcategory: formData.get('subcategory'),
+          title: formData.get('title'),
+          description: formData.get('description'),
+          date: formData.get('date'),
+          featured: formData.get('featured') === 'on',
+          tags: [formData.get('category'), formData.get('subcategory')]
+        };
+
+        try {
+          if (window.mesaContentManager) {
+            await window.mesaContentManager.addPhoto(photoData);
+            showMessage('photoSuccess');
+            e.target.reset();
+          }
+        } catch (error) {
+          showMessage('photoError');
+        }
+      });
+
+      // Team form handler
+      document.getElementById('teamForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const memberData = {
+          name: formData.get('name'),
+          position: formData.get('position'),
+          year: formData.get('year'),
+          branch: formData.get('branch'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          image: formData.get('image'),
+          bio: formData.get('bio'),
+          active: true
+        };
+
+        try {
+          if (window.mesaContentManager) {
+            await window.mesaContentManager.addTeamMember(memberData, formData.get('category'));
+            showMessage('teamSuccess');
+            e.target.reset();
+          }
+        } catch (error) {
+          showMessage('teamError');
+        }
+      });
+    });
+
+    function getCategoryIcon(category) {
+      const icons = {
+        workshop: 'fas fa-wrench',
+        seminar: 'fas fa-microphone',
+        competition: 'fas fa-trophy',
+        community: 'fas fa-users',
+        industry: 'fas fa-industry',
+        meeting: 'fas fa-users'
+      };
+      return icons[category] || 'fas fa-calendar';
+    }
+
+    function showMessage(elementId) {
+      const element = document.getElementById(elementId);
+      element.style.display = 'block';
+      setTimeout(() => {
+        element.style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+{
+  "team": {
+    "faculty": [
+      {
+        "id": "faculty-1",
+        "name": "Dr. Faculty Advisor",
+        "position": "Faculty Advisor",
+        "department": "Mechanical Engineering",
+        "email": "faculty.advisor@iitpkd.ac.in",
+        "phone": "+91-9876543210",
+        "image": "photos/team/faculty-advisor.jpg",
+        "bio": "Experienced faculty member guiding MESA activities and student development.",
+        "specialization": ["Manufacturing", "Design", "Research"],
+        "active": true
+      }
+    ],
+    "office_bearers": [
+      {
+        "id": "president-1",
+        "name": "Student President",
+        "position": "President",
+        "year": "4th Year",
+        "branch": "Mechanical Engineering",
+        "email": "president@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543211",
+        "image": "photos/team/president.jpg",
+        "bio": "Leading MESA with vision for innovation and student engagement.",
+        "responsibilities": ["Overall leadership", "Strategic planning", "External relations"],
+        "active": true
+      },
+      {
+        "id": "vp-1",
+        "name": "Vice President",
+        "position": "Vice President",
+        "year": "3rd Year",
+        "branch": "Mechanical Engineering",
+        "email": "vp@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543212",
+        "image": "photos/team/vice-president.jpg",
+        "bio": "Supporting presidential duties and managing internal operations.",
+        "responsibilities": ["Internal coordination", "Event planning", "Member relations"],
+        "active": true
+      },
+      {
+        "id": "secretary-1",
+        "name": "Secretary",
+        "position": "Secretary",
+        "year": "3rd Year",
+        "branch": "Mechanical Engineering",
+        "email": "secretary@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543213",
+        "image": "photos/team/secretary.jpg",
+        "bio": "Managing documentation and communication for MESA.",
+        "responsibilities": ["Documentation", "Communication", "Meeting coordination"],
+        "active": true
+      },
+      {
+        "id": "treasurer-1",
+        "name": "Treasurer",
+        "position": "Treasurer",
+        "year": "2nd Year",
+        "branch": "Mechanical Engineering",
+        "email": "treasurer@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543214",
+        "image": "photos/team/treasurer.jpg",
+        "bio": "Managing finances and budget planning for MESA activities.",
+        "responsibilities": ["Financial management", "Budget planning", "Expense tracking"],
+        "active": true
+      }
+    ],
+    "coordinators": [
+      {
+        "id": "tech-coord-1",
+        "name": "Technical Coordinator",
+        "position": "Technical Coordinator",
+        "year": "3rd Year",
+        "branch": "Mechanical Engineering",
+        "email": "tech@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543215",
+        "image": "photos/team/tech-coordinator.jpg",
+        "bio": "Coordinating technical events and workshops.",
+        "responsibilities": ["Technical events", "Workshop organization", "Equipment management"],
+        "active": true
+      },
+      {
+        "id": "event-coord-1",
+        "name": "Event Coordinator",
+        "position": "Event Coordinator",
+        "year": "2nd Year",
+        "branch": "Mechanical Engineering",
+        "email": "events@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543216",
+        "image": "photos/team/event-coordinator.jpg",
+        "bio": "Planning and executing MESA events and activities.",
+        "responsibilities": ["Event planning", "Logistics", "Vendor coordination"],
+        "active": true
+      },
+      {
+        "id": "pr-coord-1",
+        "name": "PR Coordinator",
+        "position": "Public Relations Coordinator",
+        "year": "2nd Year",
+        "branch": "Mechanical Engineering",
+        "email": "pr@mesa.iitpkd.ac.in",
+        "phone": "+91-9876543217",
+        "image": "photos/team/pr-coordinator.jpg",
+        "bio": "Managing public relations and social media presence.",
+        "responsibilities": ["Social media", "Public relations", "Content creation"],
+        "active": true
+      }
+    ],
+    "representatives": [
+      {
+        "id": "rep-4th-1",
+        "name": "4th Year Representative",
+        "position": "4th Year Representative",
+        "year": "4th Year",
+        "branch": "Mechanical Engineering",
+        "email": "rep4th@mesa.iitpkd.ac.in",
+        "image": "photos/team/4th-year-rep.jpg",
+        "bio": "Representing 4th year students in MESA activities.",
+        "active": true
+      },
+      {
+        "id": "rep-3rd-1",
+        "name": "3rd Year Representative",
+        "position": "3rd Year Representative",
+        "year": "3rd Year",
+        "branch": "Mechanical Engineering",
+        "email": "rep3rd@mesa.iitpkd.ac.in",
+        "image": "photos/team/3rd-year-rep.jpg",
+        "bio": "Representing 3rd year students in MESA activities.",
+        "active": true
+      },
+      {
+        "id": "rep-2nd-1",
+        "name": "2nd Year Representative",
+        "position": "2nd Year Representative",
+        "year": "2nd Year",
+        "branch": "Mechanical Engineering",
+        "email": "rep2nd@mesa.iitpkd.ac.in",
+        "image": "photos/team/2nd-year-rep.jpg",
+        "bio": "Representing 2nd year students in MESA activities.",
+        "active": true
+      },
+      {
+        "id": "rep-1st-1",
+        "name": "1st Year Representative",
+        "position": "1st Year Representative",
+        "year": "1st Year",
+        "branch": "Mechanical Engineering",
+        "email": "rep1st@mesa.iitpkd.ac.in",
+        "image": "photos/team/1st-year-rep.jpg",
+        "bio": "Representing 1st year students in MESA activities.",
+        "active": true
+      }
+    ]
+  },
+  "settings": {
+    "academicYear": "2024-25",
+    "lastUpdated": "2024-10-18",
+    "autoUpdateTeam": true,
+    "displayInactiveMembers": false
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "photos": [
+    {
+      "id": "1",
+      "filename": "team-photo-1.jpg",
+      "category": "team",
+      "subcategory": "group",
+      "title": "MESA Team 2024",
+      "description": "Complete MESA team photo for academic year 2024-25",
+      "date": "2024-10-15",
+      "tags": ["team", "group", "2024"],
+      "featured": true
+    },
+    {
+      "id": "2",
+      "filename": "workshop-session.jpg",
+      "category": "events",
+      "subcategory": "workshop",
+      "title": "CAD Workshop Session",
+      "description": "Students actively participating in hands-on CAD training with industry-standard software. The workshop covered advanced 3D modeling techniques and design optimization strategies.",
+      "date": "2024-10-10",
+      "tags": ["workshop", "cad", "learning"],
+      "featured": true
+    },
+    {
+      "id": "3",
+      "filename": "competition-winners.jpg",
+      "category": "events",
+      "subcategory": "competition",
+      "title": "Design Competition Winners",
+      "description": "Celebrating our talented students who won the annual mechanical design competition. Their innovative solutions impressed judges with creativity and technical excellence.",
+      "date": "2024-09-28",
+      "tags": ["competition", "winners", "design"],
+      "featured": true
+    },
+    {
+      "id": "4",
+      "filename": "faculty-advisor.jpg",
+      "category": "team",
+      "subcategory": "faculty",
+      "title": "Dr. Faculty Advisor",
+      "description": "MESA Faculty Advisor",
+      "date": "2024-08-15",
+      "tags": ["faculty", "advisor"],
+      "featured": false
+    },
+    {
+      "id": "5",
+      "filename": "industry-seminar.jpg",
+      "category": "events",
+      "subcategory": "seminar",
+      "title": "Industry Expert Seminar",
+      "description": "Industry professionals sharing insights on future technology trends in mechanical engineering. Students gained valuable knowledge about career opportunities and emerging fields.",
+      "date": "2024-09-15",
+      "tags": ["seminar", "industry", "technology"],
+      "featured": true
+    },
+    {
+      "id": "6",
+      "filename": "lab-activity.jpg",
+      "category": "events",
+      "subcategory": "activity",
+      "title": "Laboratory Session",
+      "description": "Students working on mechanical engineering projects",
+      "date": "2024-10-05",
+      "tags": ["lab", "projects", "mechanical"],
+      "featured": false
+    }
+  ],
+  "categories": {
+    "team": {
+      "name": "Team Photos",
+      "description": "Photos of MESA team members and faculty",
+      "subcategories": ["group", "individual", "faculty"]
+    },
+    "events": {
+      "name": "Event Photos",
+      "description": "Photos from MESA events and activities",
+      "subcategories": ["workshop", "seminar", "competition", "activity", "meeting"]
+    },
+    "gallery": {
+      "name": "General Gallery",
+      "description": "General photos and memories",
+      "subcategories": ["campus", "activities", "misc"]
+    }
+  },
+  "settings": {
+    "maxPhotosPerPage": 12,
+    "featuredPhotosLimit": 6,
+    "autoUpdateInterval": 300000,
+    "supportedFormats": ["jpg", "jpeg", "png", "webp"]
+  }
+}

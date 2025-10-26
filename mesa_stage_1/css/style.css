@@ -1002,7 +1002,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-  color: #f9f516;
+  color: var(--color-gold);
 }
 
 .social-links {
@@ -1906,7 +1906,7 @@ nav .nav-links.active {
 
 /* Default footer variant hover to gold as well */
 .footer .footer-section ul li a:hover {
-  color: var(--color-accent-brown);
+  color: var(--color-gold);
 }
 
 /* Accessibility: respect reduced motion */

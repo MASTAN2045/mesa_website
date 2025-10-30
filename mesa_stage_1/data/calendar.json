@@ -77,6 +77,45 @@
       "status": "upcoming",
       "registrationLink": "#",
       "image": "photos/events/general-meeting.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Physics Wallah Talk",
+      "date": "2025-04-11",
+      "time": "2:00 PM - 4:00 PM",
+      "location": "Main Auditorium",
+      "category": "seminar",
+      "icon": "fas fa-microphone",
+      "description": "Inspiring educational talk by Physics Wallah team on innovative learning methodologies and career guidance in engineering. Learn about modern approaches to education and career opportunities in the engineering field.",
+      "status": "upcoming",
+      "registrationLink": "#",
+      "image": "Photos/Seminar And Talks/Physicswallah_0 (3).jpg"
+    },
+    {
+      "id": "8",
+      "title": "Industry Visit: Automotive Manufacturing",
+      "date": "2025-01-05",
+      "time": "8:00 AM - 6:00 PM",
+      "location": "Mahindra Manufacturing Plant",
+      "category": "industry",
+      "icon": "fas fa-industry",
+      "description": "Educational visit to explore modern automotive manufacturing processes and quality control systems.",
+      "status": "upcoming",
+      "registrationLink": "#",
+      "image": "photos/events/industry-visit.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Research Symposium 2025",
+      "date": "2025-01-12",
+      "time": "9:00 AM - 5:00 PM",
+      "location": "Main Auditorium",
+      "category": "seminar",
+      "icon": "fas fa-microphone",
+      "description": "Annual research symposium showcasing student and faculty research projects in mechanical engineering.",
+      "status": "upcoming",
+      "registrationLink": "#",
+      "image": "photos/events/research-symposium.jpg"
     }
   ],
   "categories": {

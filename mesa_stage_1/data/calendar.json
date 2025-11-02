@@ -29,7 +29,7 @@
     {
       "id": "3",
       "title": "Design Competition Finals",
-      "date": "2024-12-28",
+      "date": "2025-12-28",
       "time": "10:00 AM - 6:00 PM",
       "location": "Main Auditorium",
       "category": "competition",
@@ -116,6 +116,45 @@
       "status": "upcoming",
       "registrationLink": "#",
       "image": "photos/events/research-symposium.jpg"
+    },
+    {
+      "id": "10",
+      "title": "CAD Workshop",
+      "date": "2025-11-05",
+      "time": "2:00 PM - 5:00 PM",
+      "location": "Computer Lab 1",
+      "category": "workshop",
+      "icon": "fas fa-wrench",
+      "description": "Hands-on workshop on advanced CAD modeling techniques using SolidWorks and AutoCAD.",
+      "status": "upcoming",
+      "registrationLink": "#",
+      "image": "photos/events/cad-workshop.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Industry Expert Talk",
+      "date": "2025-11-12",
+      "time": "3:00 PM - 4:30 PM",
+      "location": "Seminar Hall B",
+      "category": "seminar",
+      "icon": "fas fa-microphone",
+      "description": "Expert talk on emerging trends in mechanical engineering and career opportunities in the industry.",
+      "status": "upcoming",
+      "registrationLink": "#",
+      "image": "photos/events/expert-talk.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Team Building Event",
+      "date": "2025-11-20",
+      "time": "4:00 PM - 7:00 PM",
+      "location": "Student Recreation Center",
+      "category": "community",
+      "icon": "fas fa-users",
+      "description": "Fun team building activities and networking session for MESA members.",
+      "status": "upcoming",
+      "registrationLink": "#",
+      "image": "photos/events/team-building.jpg"
     }
   ],
   "categories": {

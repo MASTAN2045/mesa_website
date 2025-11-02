@@ -621,7 +621,7 @@ function initIntroReveal() {
             revealHero();
             sessionStorage.setItem('mesaSplashPlayed', 'true');
         }, 620);
-    }, 3500);
+    }, 9000);
 }
 
 // Notification System
@@ -893,10 +893,10 @@ function initPhotoSlider() {
     // Initialize first slide
     showSlide(0);
     
-    // Start auto-slide with delay to allow users to read the first slide properly
+    // Start auto-slide with delay to coordinate with logo animation (9s total)
     setTimeout(() => {
         startAutoSlide();
-    }, 8000); // Wait 8 seconds before starting auto-slide for comfortable viewing
+    }, 10000); // Wait 10 seconds - logo animation (9s) + 1s buffer for smooth transition
     
     // Pause auto-slide on hover over the entire photo slider section
     const photoSliderSection = document.querySelector('.photo-slider');
@@ -1032,7 +1032,7 @@ function startAutoSlide() {
     stopAutoSlide(); // Clear any existing interval
     slideInterval = setInterval(() => {
         changeSlide(1);
-    }, 4000); // Change slide every 4 seconds
+    }, 5000); // Change slide every 5 seconds - slightly longer for better user experience after logo animation
 }
 
 // Sidebar Calendar Functionality

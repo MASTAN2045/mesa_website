@@ -2025,30 +2025,38 @@ nav .nav-links.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 2rem);
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 3rem);
   opacity: 0;
   animation: logoFadeIn 2s ease-out 1s forwards;
+  min-height: 60vh;
 }
 
 .splash-logo-image {
-  width: clamp(6rem, 15vw, 7.5rem);
-  height: clamp(6rem, 15vw, 7.5rem);
+  width: clamp(7rem, 18vw, 9rem);
+  height: clamp(7rem, 18vw, 9rem);
   border-radius: 50%;
   object-fit: cover;
-  border: 0.25rem solid var(--color-gold);
+  border: 0.3rem solid var(--color-gold);
   box-shadow: 
-    0 0 1.875rem rgba(245, 158, 11, 0.4),
-    0 0 3.75rem rgba(245, 158, 11, 0.2);
+    0 0 2rem rgba(245, 158, 11, 0.5),
+    0 0 4rem rgba(245, 158, 11, 0.3);
   animation: logoFloat 4s ease-in-out infinite;
+}
+
+.splash-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .splash-logo {
   display: inline-flex;
-  gap: clamp(0.5rem, 2vw, 0.625rem);
+  gap: clamp(0.4rem, 2vw, 0.6rem);
   font-weight: 800;
-  font-size: clamp(2rem, 8vw, 3rem);
-  letter-spacing: 0.15em;
-  margin-top: 1.25rem;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  letter-spacing: 0.1em;
 }
 
 .splash-letter {
@@ -2058,37 +2066,29 @@ nav .nav-links.active {
 }
 
 .splash-letter:nth-child(1) { animation-delay: 2s; }
-.splash-letter:nth-child(2) { animation-delay: 2.3s; }
-.splash-letter:nth-child(3) { animation-delay: 2.6s; }
-.splash-letter:nth-child(4) { animation-delay: 2.9s; }
+.splash-letter:nth-child(2) { animation-delay: 2.2s; }
+.splash-letter:nth-child(3) { animation-delay: 2.4s; }
+.splash-letter:nth-child(4) { animation-delay: 2.6s; }
 
-.splash-sub {
-  margin-top: 1.25rem;
-  color: #e5e7eb;
-  font-weight: 500;
-  font-size: clamp(1rem, 3vw, 1.2rem);
+.splash-institute {
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  letter-spacing: 0.15em;
   opacity: 0;
-  animation: fadeInUp 800ms ease-out 4s forwards;
-}
-
-.splash-tagline {
-  margin-top: 0.625rem;
-  color: var(--color-gold-light);
-  font-weight: 400;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  opacity: 0;
-  animation: fadeInUp 800ms ease-out 5s forwards;
+  animation: fadeInUp 800ms ease-out 3.5s forwards;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
 }
 
 .splash-progress {
-  margin-top: 2.5rem;
-  width: clamp(10rem, 30vw, 12.5rem);
-  height: 0.1875rem;
+  width: clamp(12rem, 35vw, 15rem);
+  height: 0.25rem;
   background: rgba(245, 158, 11, 0.2);
-  border-radius: 0.125rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   opacity: 0;
-  animation: fadeInUp 800ms ease-out 6s forwards;
+  animation: fadeInUp 800ms ease-out 4.5s forwards;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
 }
 
 .splash-progress-bar {
@@ -2096,7 +2096,7 @@ nav .nav-links.active {
   background: var(--bg-gradient-gold);
   border-radius: 0.125rem;
   width: 0%;
-  animation: progressFill 3s ease-out 6s forwards;
+  animation: progressFill 2s ease-out 5s forwards;
   box-shadow: var(--shadow-glow);
 }
 
@@ -3083,6 +3083,383 @@ nav .nav-links.active {
   .semester-title {
     padding: 0.75rem 1rem;
     font-size: 1rem;
+  }
+}
+
+/* ===== MESA CALENDAR STYLES ===== */
+
+.mesa-calendar-section {
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  background: var(--bg-primary);
+  min-height: 60vh;
+}
+
+.mesa-calendar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.mesa-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-soft));
+  color: var(--color-text-white);
+  position: relative;
+}
+
+.mesa-calendar-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mesa-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23mesa-pattern)"/></svg>');
+  pointer-events: none;
+}
+
+.mesa-nav-btn {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+.mesa-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mesa-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.mesa-month-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+
+.mesa-events-list {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 300px;
+}
+
+.mesa-event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 2rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.mesa-event-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(245, 158, 11, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mesa-event-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-gold-soft);
+}
+
+.mesa-event-item:hover::before {
+  opacity: 1;
+}
+
+.mesa-event-date {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-soft));
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-white);
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.mesa-event-date::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.mesa-event-item:hover .mesa-event-date::before {
+  transform: rotate(45deg) translateX(100%);
+}
+
+.mesa-event-day {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.mesa-event-month {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.mesa-event-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mesa-event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mesa-event-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 200px;
+}
+
+.mesa-event-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1.5rem;
+  color: var(--color-text-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  box-shadow: var(--shadow-soft);
+}
+
+.mesa-event-details {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mesa-event-time,
+.mesa-event-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.mesa-event-time i,
+.mesa-event-location i {
+  color: var(--color-gold);
+  font-size: 0.8rem;
+}
+
+.mesa-event-description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mesa-no-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.mesa-no-events i {
+  font-size: 3rem;
+  color: var(--color-gold-soft);
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.mesa-no-events p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Simple CSS animations for dynamic content */
+.mesa-event-item:nth-child(1) { animation-delay: 0.1s; }
+.mesa-event-item:nth-child(2) { animation-delay: 0.2s; }
+.mesa-event-item:nth-child(3) { animation-delay: 0.3s; }
+.mesa-event-item:nth-child(4) { animation-delay: 0.4s; }
+.mesa-event-item:nth-child(5) { animation-delay: 0.5s; }
+
+.mesa-no-events {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mesa-calendar-header {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .mesa-month-title {
+    font-size: 1.5rem;
+  }
+
+  .mesa-nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .mesa-events-list {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .mesa-event-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .mesa-event-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .mesa-event-title {
+    min-width: auto;
+    text-align: center;
+  }
+
+  .mesa-event-details {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mesa-calendar-container {
+    margin: 0 1rem;
+    border-radius: 1rem;
+  }
+
+  .mesa-calendar-header {
+    padding: 1rem;
+  }
+
+  .mesa-month-title {
+    font-size: 1.3rem;
+  }
+
+  .mesa-events-list {
+    padding: 1rem;
+  }
+
+  .mesa-event-item {
+    padding: 1rem;
+  }
+
+  .mesa-event-date {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .mesa-event-day {
+    font-size: 1rem;
+  }
+
+  .mesa-event-month {
+    font-size: 0.6rem;
+  }
+
+  .mesa-event-title {
+    font-size: 1.1rem;
+  }
+
+  .mesa-event-details {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 

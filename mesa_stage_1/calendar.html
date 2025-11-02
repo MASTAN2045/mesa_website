@@ -45,115 +45,35 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Events Calendar</h1>
+      <h1>MESA Calendar</h1>
       <p>Discover our upcoming events, workshops, and activities</p>
     </div>
   </section>
 
-  <!-- Google Calendar Section -->
-  <section class="google-calendar-section">
+  <!-- MESA Calendar Section -->
+  <section class="mesa-calendar-section">
     <div class="container">
-      <p class="section-subtitle">Stay updated with all our upcoming events and activities</p>
-      <div class="calendar-wrapper">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0&src=YOUR_CALENDAR_ID%40gmail.com&color=%23F09300" 
-                style="border:0" 
-                width="100%" 
-                height="450" 
-                frameborder="0" 
-                scrolling="no">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Events -->
-  <section class="upcoming-events">
-    <div class="container">
-      <h2 class="section-title">Upcoming Events</h2>
-      <div class="events-timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">15</span>
-            <span class="month">Dec</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Advanced Manufacturing Workshop</h3>
-            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Mechanical Engineering Lab</p>
-            <p class="event-time"><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</p>
-            <p>Hands-on workshop covering modern manufacturing techniques including 3D printing, CNC machining, and quality control systems.</p>
-            <div class="event-tags">
-              <span class="tag">Workshop</span>
-              <span class="tag">Hands-on</span>
-            </div>
-          </div>
+      <div class="mesa-calendar-container">
+        <!-- Calendar Header with Navigation -->
+        <div class="mesa-calendar-header">
+          <button class="mesa-nav-btn" id="prevMonth">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <h2 class="mesa-month-title" id="currentMonth">November 2024</h2>
+          <button class="mesa-nav-btn" id="nextMonth">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">22</span>
-            <span class="month">Dec</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Tech Talk: Future of Robotics</h3>
-            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Seminar Hall</p>
-            <p class="event-time"><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
-            <p>Industry expert talk on the latest developments in robotics and automation, followed by Q&A session.</p>
-            <div class="event-tags">
-              <span class="tag">Tech Talk</span>
-              <span class="tag">Industry</span>
-            </div>
-          </div>
+        <!-- Events List -->
+        <div class="mesa-events-list" id="eventsList">
+          <!-- Events will be dynamically loaded here -->
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">28</span>
-            <span class="month">Dec</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Design Competition Finals</h3>
-            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
-            <p class="event-time"><i class="fas fa-clock"></i> 10:00 AM - 6:00 PM</p>
-            <p>Final presentation and judging of student design projects. Open to all students and faculty.</p>
-            <div class="event-tags">
-              <span class="tag">Competition</span>
-              <span class="tag">Student</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">05</span>
-            <span class="month">Jan</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Industry Visit: Automotive Manufacturing</h3>
-            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Mahindra Manufacturing Plant</p>
-            <p class="event-time"><i class="fas fa-clock"></i> 8:00 AM - 6:00 PM</p>
-            <p>Educational visit to explore modern automotive manufacturing processes and quality control systems.</p>
-            <div class="event-tags">
-              <span class="tag">Industry Visit</span>
-              <span class="tag">Educational</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">12</span>
-            <span class="month">Jan</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Research Symposium 2025</h3>
-            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
-            <p class="event-time"><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</p>
-            <p>Annual research symposium featuring student presentations, faculty research, and industry collaborations.</p>
-            <div class="event-tags">
-              <span class="tag">Research</span>
-              <span class="tag">Symposium</span>
-            </div>
-          </div>
+        <!-- No Events Message -->
+        <div class="mesa-no-events" id="noEventsMessage" style="display: none;">
+          <i class="fas fa-calendar-times"></i>
+          <p>No events scheduled for this month</p>
         </div>
       </div>
     </div>
@@ -210,5 +130,7 @@
 
   <script src="js/content-manager.js" defer></script>
   <script src="js/script.js"></script>
+  <script src="js/mesa-calendar.js"></script>
+  <script src="js/calendar-animations.js"></script>
 </body>
 </html>
